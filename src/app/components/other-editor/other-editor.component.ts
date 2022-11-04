@@ -123,7 +123,16 @@ export class OtherEditorComponent {
           const editor: any = this,
             config = editor.config;
           // Let the party on!
-          const command = editor.addCommand('save', {
+          const command1 = editor.addCommand('save', {
+            modes: { wysiwyg: 1, source: 1 },
+            exec: function (editor1: any) {
+              const fo = editor1.element.$.form;
+              editor1.updateElement();
+              editorSave.rxsubmit(editor1);
+            },
+          });
+          // suppse you want to do some action on some icon press ---> bold is the button name if u hover on bold icon but all in lowercase
+          const command2 = editor.addCommand('bold', {
             modes: { wysiwyg: 1, source: 1 },
             exec: function (editor1: any) {
               const fo = editor1.element.$.form;
