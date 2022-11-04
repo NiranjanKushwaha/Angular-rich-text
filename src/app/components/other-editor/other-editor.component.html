@@ -10,7 +10,7 @@
   </textarea>
 </div>
 
-<button (click)="open()">click to open</button>
+<button (click)="open()">click to {{ isView ? "open" : "close" }}</button>
 <ng-container *ngIf="!isView">
   <p>note: click on save icon to generate html</p>
 </ng-container>
