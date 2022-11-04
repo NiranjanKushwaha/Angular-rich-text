@@ -1,0 +1,16 @@
+<div [hidden]="isView">
+  <textarea
+    #editor
+    [(ngModel)]="ckEditorcontent"
+    #myckeditor="ngModel"
+    name="myckeditor"
+    debounce="500"
+  >
+      {{ ckEditorcontent }}
+  </textarea>
+</div>
+
+<button (click)="open()">click to open</button>
+<ng-container *ngIf="!isView">
+  <p>note: click on save icon to generate html</p>
+</ng-container>

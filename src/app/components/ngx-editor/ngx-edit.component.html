@@ -1,0 +1,6 @@
+<div class="custom-editor">
+  <ngx-editor-menu [editor]="editor" [toolbar]="toolbar"> </ngx-editor-menu>
+  <ngx-editor [editor]="editor" [(ngModel)]="html" style="height: 20rem">
+  </ngx-editor>
+</div>
+<button (click)="saveText()">save</button>
